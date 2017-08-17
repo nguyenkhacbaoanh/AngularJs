@@ -1,0 +1,67 @@
+html body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.container {
+	text-align: center;
+	width: 600px;
+	height: 600px;
+	border: 1px solid black;
+	padding: 20px;
+	margin-left: 400px;
+}
+
+.container-right, .container-left {
+	display: inline-block;
+	width: auto;
+	height: 600px;
+}
+
+.question-area {
+	width: 100%;
+	height: 200px;
+	border: 1px solid #f8f8f8;
+	border-radius: 5px;
+	text-align: center;
+	padding: 5px;
+}
+
+div p {
+	display: inline-block;
+}
+
+.choice-area {
+	width: 100%;
+	height: 300px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.choice-area .choice {
+	width: 45%;
+	height: 45%;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.choice-area .choice p {
+	display: inline-block;
+}
+
+.info {
+	width: 100%;
+	height: auto;
+}
+
+.question-current, .right-reponse {
+	background-color: green;
+}
+
+.control {
+	width: 100%;
+	height: 20%;
+}

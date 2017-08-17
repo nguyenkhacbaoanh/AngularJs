@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Chiec Non Ky Dieu</title>
+	<title>Quizz</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="style1.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.js"
+	  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="scripts.js"></script>
 </head>
 <body ng-app = "myApp">
 	<div class="container" ng-controller="data">
-	  <div class="question-area"> <p ng-bind="question"> </p></div>
-	  <div class="choice-area">
-	  	<div class="choice" ng-repeat="ct in content"> <p ng-bind="ct"> some thing </p></div>
-	  </div>
-	  <div class="info"> <p> {{questionCurrent}} </p></div>
-	  <div class="control">
-	  	<button ng-click="displayQ()"> question suivant </button>
-	  </div>
+		<div class="col-sm-8 col-md-8">
+		  <div class="question-area"> <p ng-bind="question" > </p></div>
+		  <div class="choice-area">
+		  	<div class="choice" ng-repeat="ct in content" ng-click="reponseQ(ct)"> <p> {{ct|uppercase}} </p></div>
+		  </div>
+		  <div class="control">
+		  	<button ng-click="displayQ()"> question suivant </button>
+		  	<p ng-bind="correct + 1" ng-If="correct >= 0"></p>
+		  	<p id="reponse"></p>
+		  </div>
+		</div>
+		<div class="col-sm-4 col-md-4">
+			<div class="info" ng-repeat="q in questions" ng-class='(question === q.question)?"question-current":""'> <p> {{questions.indexOf(q) + 1}} </p></div>
+		</div>
 	</div>
+	
 	<!-- <script type="text/javascript" src="myscript.js"></script> -->
-	<script type="text/javascript" src="script.js"></script>
+	
 </body>
 </html>
